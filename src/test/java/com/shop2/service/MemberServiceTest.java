@@ -34,7 +34,6 @@ class MemberServiceTest {
         MemberFormDto memberFormDto = new MemberFormDto();
         memberFormDto.setEmail("test@email.com");
         memberFormDto.setUsername("홍길동");
-        memberFormDto.setAddress("서울시 마포구 합정동");
         memberFormDto.setPassword("1234");
         return Member.createMember(memberFormDto, passwordEncoder);
     }
@@ -46,7 +45,6 @@ class MemberServiceTest {
         Member savedMember = memberService.saveMember(member);
         assertEquals(member.getEmail(), savedMember.getEmail());
         assertEquals(member.getUsername(), savedMember.getUsername());
-        assertEquals(member.getAddress(), savedMember.getAddress());
         assertEquals(member.getPassword(), savedMember.getPassword());
         assertEquals(member.getRoles(), savedMember.getRoles());
     }
